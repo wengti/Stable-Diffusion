@@ -1,0 +1,102 @@
+
+task_name : 'LDM_CELEB_IMAGE'
+seed : 1111
+show_info : True
+show_model: False
+num_workers: 0
+use_latent: True
+model_latent_mask_flag: False # Need to set to True, only when a) use_latent is False and b) image condition is involved, are both true
+ac_save_path: './result/VQVAE_CELEB'
+
+dataset_type : 'CELEB'
+data_path : './data/CelebAMask-HQ'
+im_channels : 3
+im_size : 256
+
+###### autoencoder ######
+
+ac_batch_size: 4 #4
+ac_epochs: 20
+ac_lr: 0.0001 # 0.00001
+ac_acc_steps: 4 #4
+ac_im_save_steps: 500
+
+disc_start_step: 30000 # 15000
+adv_loss_weight: 0.5
+codebook_weight: 1
+commitment_weight: 0.2
+perceptual_weight: 1
+KL_weight: 0.000005
+
+z_channels : 4
+codebook_size : 8192
+ac_norm_channels : 32
+
+ac_num_down_layers : 2
+ac_down_channels : [64, 128, 256, 256]
+ac_down_sample : [True, True, True]
+
+ac_num_mid_layers : 2
+ac_mid_channels : [256, 256]
+ac_num_heads : 4
+ac_mid_attn: [True]
+
+ac_num_up_layers : 2
+
+
+
+####### ldm ####### 
+
+ldm_batch_size: 8 # 16
+ldm_epochs: 15 # 100
+ldm_lr : 0.000005
+
+num_timesteps: 1000
+beta_start : 0.00085
+beta_end : 0.012
+time_embedding_dim: 512
+ldm_norm_channels: 32
+
+ldm_down_channels: [256, 384, 512, 768]
+ldm_down_sample: [True, True, True]
+ldm_down_attn: [True, True, True]
+ldm_num_heads: 16
+ldm_num_down_layers: 2
+
+ldm_mid_channels: [768, 512]
+ldm_mid_attn: [True]
+ldm_num_mid_layers: 2
+
+
+ldm_num_up_layers: 2
+
+ldm_conv_out_channels: 128
+
+
+
+condition : ['image'] #'class', 'image', 'text'
+
+##### class ######
+# num_classes: 10
+# class_drop_prob: 0.1
+
+##### image #####
+mask_size: 512
+mask_channels : 18 
+image_drop_prob: 0.1
+
+##### text ######
+# text_embedding_dim: 512   # 512 for clip, 768 for bert
+# text_model: 'clip'        # 'clip' or 'bert'
+# text_drop_prob: 0.1
+
+
+
+##### Sample / Infer #####
+num_samples: 2
+samples_per_row: 2
+cf_guidance: 2
+
+
+
+

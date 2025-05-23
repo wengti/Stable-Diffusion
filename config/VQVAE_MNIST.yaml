@@ -1,0 +1,43 @@
+
+task_name : 'VQVAE_MNIST'
+seed : 1111
+show_info : False
+show_model: False
+use_latent: False
+model_latent_mask_flag: False # Need to set to True, only when a) use_latent is False and b) image condition is involved, are both true
+num_workers: 4
+dataset_type : 'MNIST'
+data_path : './data/MNIST_train'
+im_channels : 1
+im_size : 28
+
+
+ac_batch_size: 64
+ac_epochs: 10
+ac_lr: 0.0001
+ac_acc_steps: 1
+ac_im_save_steps: 320
+
+disc_start_step: 1000
+adv_loss_weight: 0.5
+codebook_weight: 1
+commitment_weight: 0.2
+perceptual_weight: 1
+KL_weight: 0.000005
+
+z_channels : 3
+codebook_size : 20
+ac_norm_channels : 32
+
+ac_num_down_layers : 1
+ac_down_channels : [32, 64, 128]
+ac_down_sample : [True, True]
+
+ac_num_mid_layers : 1
+ac_mid_channels : [128, 128]
+ac_num_heads : 16
+ac_mid_attn: [True]
+
+ac_num_up_layers : 1
+
+condition : []#'class'

@@ -1,0 +1,101 @@
+
+task_name : 'LDM_MNIST_UNC'
+seed : 1111
+show_info : True
+show_model: True
+num_workers: 4
+use_latent: True
+model_latent_mask_flag: False # Need to set to True, only when a) use_latent is False and b) image condition is involved, are both true
+ac_save_path: './result/VQVAE_MNIST'
+
+dataset_type : 'MNIST'
+data_path : './data/MNIST_train'
+im_channels : 1
+im_size : 28
+
+
+###### autoencoder ######
+
+ac_batch_size: 64
+ac_epochs: 10
+ac_lr: 0.0001
+ac_acc_steps: 1
+ac_im_save_steps: 320
+
+disc_start_step: 1000
+adv_loss_weight: 0.5
+codebook_weight: 1
+commitment_weight: 0.2
+perceptual_weight: 1
+KL_weight: 0.000005
+
+z_channels : 3
+codebook_size : 20
+ac_norm_channels : 32
+
+ac_num_down_layers : 1
+ac_down_channels : [32, 64, 128]
+ac_down_sample : [True, True]
+
+ac_num_mid_layers : 1
+ac_mid_channels : [128, 128]
+ac_num_heads : 16
+ac_mid_attn: [True]
+
+ac_num_up_layers : 1
+
+
+####### ldm ####### 
+
+ldm_batch_size: 64
+ldm_epochs: 100
+ldm_lr : 0.00001 # 0.00001
+
+num_timesteps: 1000
+beta_start : 0.0015
+beta_end : 0.0195
+time_embedding_dim: 256
+ldm_norm_channels: 32
+
+ldm_down_channels: [128, 256, 256, 256]
+ldm_down_sample: [False, False, False]
+ldm_down_attn: [True, True, True]
+ldm_num_heads: 16
+ldm_num_down_layers: 2
+
+ldm_mid_channels: [256, 256]
+ldm_mid_attn: [True]
+ldm_num_mid_layers: 2
+
+
+ldm_num_up_layers: 2
+
+ldm_conv_out_channels: 128
+
+
+condition : [] #'class', 'image', 'text'
+
+
+##### class ######
+# num_classes: 10
+# class_drop_prob: 0.1
+
+##### image #####
+# mask_size: 512
+# mask_channels : 18 
+# image_drop_prob: 0.1
+
+##### text ######
+# text_embedding_dim: 512   # 512 for clip, 768 for bert
+# text_model: 'clip'        # 'clip' or 'bert'
+# text_drop_prob: 0.1
+
+
+
+##### Sample / Infer #####
+num_samples: 25
+samples_per_row: 5
+cf_guidance: 1
+
+
+

@@ -1,0 +1,46 @@
+
+task_name : 'VQVAE_CELEB'
+seed : 1111
+show_info : True
+show_model: False
+use_latent: False
+model_latent_mask_flag: False # Need to set to True, only when a) use_latent is False and b) image condition is involved, are both true
+num_workers: 0
+
+dataset_type : 'CELEB'
+data_path : './data/CelebAMask-HQ'
+im_channels : 3
+im_size : 256
+
+ac_batch_size: 4 #4
+ac_epochs: 20
+ac_lr: 0.0001 # 0.00001
+ac_acc_steps: 4 #4
+ac_im_save_steps: 500
+
+disc_start_step: 30000 # 15000
+adv_loss_weight: 0.5
+codebook_weight: 1
+commitment_weight: 0.2
+perceptual_weight: 1
+KL_weight: 0.000005
+
+z_channels : 4
+codebook_size : 8192
+ac_norm_channels : 32
+
+ac_num_down_layers : 2
+ac_down_channels : [64, 128, 256, 256]
+ac_down_sample : [True, True, True]
+
+ac_num_mid_layers : 2
+ac_mid_channels : [256, 256]
+ac_num_heads : 4
+ac_mid_attn: [True]
+
+ac_num_up_layers : 2
+
+condition : ['']
+
+
+
