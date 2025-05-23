@@ -42,44 +42,44 @@ The code has been rewritten from scratch while maintaining the core concepts and
 
 - A) **Reconstruction of images using the latent data extracted by a VQVAE trained with MNIST**
 
-![VQVAE_MNIST](./result/[1] VQVAE_MNIST reconstruction.png)
+![VQVAE_MNIST](./result/[1]%20VQVAE_MNIST%20reconstruction.png)
 
 - B) **Reconstruction of images using the latent data extracted by a VQVAE trained with CELEB**
 
-![VQVAE_CELEB](./result/[2] VQVAE_CELEB reconstruction.png)
+![VQVAE_CELEB](./result/[2]%20VQVAE_CELEB%20reconstruction.png)
 
 - C) **Generation results using the Stable Diffusion, trained with MNIST under class conditions**
 	- The input class conditions for this sample is [9, 4, 1, 8, 6, 1, 8, 4, 1, 9, 8, 5, 2, 7, 0, 1, 8, 1, 7, 7, 1, 9, 6, 3, 0].
 
-![LDM_MNIST_CLASS](./result/[6] MNIST class condition.png)
+![LDM_MNIST_CLASS](./result/[6]%20MNIST%20class%20condition.png)
 
 - D) **Generation results using the Stable Diffusion, trained with CELEB under text conditions**
 	- The input text condition for this sample is [This person has black hair, and oval face. She is attractive and wears heavy makeup.]
 
-![LDM_CELEB_TEXT](./result/[5] CELEB text condition.png)
+![LDM_CELEB_TEXT](./result/[5]%20CELEB%20text%20condition.png)
 
 - E) **Generation results using the Stable Diffusion, trained with CELEB under image conditions**
 
-![LDM_CELEB_IMAGE_MASK](./result/[4] CELEB image mask.png)
-![LDM_CELEB_IMAGE](./result/[4] CELEB image.png)
+![LDM_CELEB_IMAGE_MASK](./result/[4]%20CELEB%20image%@0mask.png)
+![LDM_CELEB_IMAGE](./result/[4]%20CELEB%@0image.png)
 
 - F) **Generation results using the Stable Diffusion, trained with CELEB under text and image conditions**
 	- The input text condition for this sample are 
 		[She is smiling, and young and has high cheekbones, big nose, and mouth slightly open.] 
 		[This man has bushy eyebrows and wears lipstick. He is young.]
 
-![LDM_CELEB_IMAGE_TEXT_MASK](./result/[3] CELEB image text mask .png)
-![LDM_CELEB_IMAGE_TEXT](./result/[3] CELEB image text.png)
+![LDM_CELEB_IMAGE_TEXT_MASK](./result/[3]%20CELEB%@0image%20text%20mask%20.png)
+![LDM_CELEB_IMAGE_TEXT](./result/[3]%20CELEB%20image%20text.png)
 
 - G) **Generation results using the Stable Diffusion, trained with CELEB under text and image conditions, but inferred by dropping image**
 	- The input text condition for this sample is [She has high cheekbones, pointy nose, mouth slightly open, and rosy cheeks and wears lipstick, and necklace. She is young.]
 
-![LDM_CELEB_DROP_IMAGE](./result/[8] CELEB drop image.png)
+![LDM_CELEB_DROP_IMAGE](./result/[8]%20CELEB%20drop%20image.png)
 
 - H) **Generation results using the Stable Diffusion, trained with CELEB under text and image conditions, but inferred by dropping text**
 
-![LDM_CELEB_DROP_TEXT_MASK](./result/[7] CELEB drop text mask.png)
-![LDM_CELEB_DROP_TEXT](./result/[7] CELEB drop text.png)
+![LDM_CELEB_DROP_TEXT_MASK](./result/[7]%20CELEB%20drop%20text%20mask.png)
+![LDM_CELEB_DROP_TEXT](./result/[7]%20CELEB%20drop%20text.png)
 
 
 
