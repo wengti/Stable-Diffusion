@@ -60,15 +60,15 @@ The code has been rewritten from scratch while maintaining the core concepts and
 
 - E) **Generation results using the Stable Diffusion, trained with CELEB under image conditions**
 
-![LDM_CELEB_IMAGE_MASK](./images/[4]%20CELEB%20image%@0mask.png)
-![LDM_CELEB_IMAGE](./images/[4]%20CELEB%@0image.png)
+![LDM_CELEB_IMAGE_MASK](./images/[4]%20CELEB%20image%20mask.png)
+![LDM_CELEB_IMAGE](./images/[4]%20CELEB%20image.png)
 
 - F) **Generation results using the Stable Diffusion, trained with CELEB under text and image conditions**
 	- The input text condition for this sample are 
 		[She is smiling, and young and has high cheekbones, big nose, and mouth slightly open.] 
 		[This man has bushy eyebrows and wears lipstick. He is young.]
 
-![LDM_CELEB_IMAGE_TEXT_MASK](./images/[3]%20CELEB%@0image%20text%20mask%20.png)
+![LDM_CELEB_IMAGE_TEXT_MASK](./images/[3]%20CELEB%20image%20text%20mask%20.png)
 ![LDM_CELEB_IMAGE_TEXT](./images/[3]%20CELEB%20image%20text.png)
 
 - G) **Generation results using the Stable Diffusion, trained with CELEB under text and image conditions, but inferred by dropping image**
