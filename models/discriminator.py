@@ -29,7 +29,7 @@ class discriminator(nn.Module):
                           padding = padding[i],
                           bias = bias[i]),
                 nn.BatchNorm2d(num_features = channels[i+1]) if i!=0 and i!=len(channels)-2 else nn.Identity(),
-                nn.LeakyReLU(0.2) if i!=len(channels)-1 else nn.Identity()
+                nn.LeakyReLU(0.2) if i!=len(channels) - 2 else nn.Identity()
                 ) for i in range(len(kernel_size))])
         
     def forward(self, x):
